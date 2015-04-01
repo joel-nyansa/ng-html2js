@@ -49,7 +49,7 @@ var content = fs.readFileSync(inputFile, 'utf8');
 var inputAlias = inputFile;
 if(baseDir){
   baseDir = path.resolve(baseDir);
-  inputAlias = inputAlias.replace(baseDir, '');
+  inputAlias = inputAlias.replace(baseDir + '/', '');
 }
 inputAlias = inputAlias.replace(/\\/g, '/');
 var output = html2js(inputAlias, content, moduleName, moduleVar);
